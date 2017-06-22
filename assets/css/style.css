@@ -96,7 +96,7 @@
 /* Conductor*/
 #conductor{
   background-image: url(../img/conduce.jpg);
-  height: 90vh;
+  height: 70vh;
   background-position: center;
   background-size: cover;
   position: relative;
@@ -106,7 +106,7 @@
   right: 0;
   background-color: rgba(4, 4, 4, 0.37);
   color: #ffffff;
-  height: 90vh;
+  height: 70vh;
   box-sizing: border-box;
   padding-top: 120px;
 }
