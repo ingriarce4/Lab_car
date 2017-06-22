@@ -1,4 +1,4 @@
-
+/* Nav */
 .navbar{
   background-color: #ffffff;
   border: 0;
@@ -19,6 +19,7 @@
   border: 0;
   top: -10px;
 }
+/* Hero */
 #hero{
   background-image: url(../img/taxi.jpg);
   background-position: 100% 93%;
@@ -68,4 +69,27 @@
 }
 .navbar-brand{
   display: inline-block;
+}
+/* Información*/
+#informacion{
+  background-color: #f7b617;
+  padding: 40px 40px;
+  color: #ffffff;
+}
+#informacion h3{
+  font-size: 2rem;
+}
+.inf-texto{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+}
+.border{
+  position: relative;
+  border: 1px solid #ffffff;
+  border-color: #ffffff;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.border img{
+  width: 300px;
 }
