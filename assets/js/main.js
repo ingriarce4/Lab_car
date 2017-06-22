@@ -1,36 +1,42 @@
-var destino = document.getElementById("destino");
-var partida = document.getElementById("partida");
-
 function initMap() {
-    var iestp = {lat: -12.0520763, lng: -77.0439461};
-    var map = new google.maps.Map(document.getElementById('mapa'), {
-      zoom: 18,
-      center: iestp
-    });
-    var marker = new google.maps.Marker({
-      position: iestp,
-      map: map
-    });
-    var info = new google.maps.InfoWindow({map: map});
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 7,
+          center: {lat: 41.85, lng: -87.65}
+        });
+        directionsDisplay.setMap(map);
 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-          marker:position
+        var onChangeHandler = function() {
+          calculateAndDisplayRoute(directionsService, directionsDisplay);
         };
-        info.setPosition(pos);
-        info.setContent('Location found.');
-        map.setCenter(pos);
-      }, function() {
-        handleLocationError(true, info, map.getCenter());
-      });
-    } else {
-      handleLocationError(false, info, map.getCenter());
-    }
-  }
-  function handleLocationError(browserHasGeolocation, info, pos) {
-    info.setPosition(pos);
-    alert("No ha podido ser ubicado");
-  }
+        document.getElementById('start').addEventListener('change', onChangeHandler);
+        document.getElementById('end').addEventListener('change', onChangeHandler);
+      }
+
+      function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        directionsService.route({
+          origin: document.getElementById('start').value,
+          destination: document.getElementById('end').value,
+          travelMode: 'DRIVING'
+        }, function(response, status) {
+          if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
+
+    
+        directionsService.route(request, function(response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(response);
+                distanceInput.value = response.routes[0].legs[0].distance.value / 1000; 
+                distanceMl.value =  response.routes[0].legs[0].distance.value * 0.000621371;
+                price.value = distanceMl.value * 2.50;
+
+            }
+        });         
+    
+

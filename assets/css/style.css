@@ -161,3 +161,59 @@
   padding: 10px;
   border: 1px solid #ffffff;
 }
+
+/* footer*/
+#footer{
+  background-color: #2b2b2b;
+  padding: 50px 0;
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+}
+#footer ul li{
+  list-style-type: none;
+}
+#footer a{
+  margin-right: 7px;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+#footer ul li a{
+  color: #ffffff;
+  line-height: 2.5;
+  text-decoration: none;
+}
+#footer .flex-end{
+  display: flex;
+  align-items: flex-end;
+  height: 290px;
+}
+.flex-end img{
+  margin: 15px;
+  cursor: pointer;
+}
+@media(max-width: 768px){
+  .logo{
+    width: 100px;
+    position: relative;
+    left: 65px;
+  }
+  #footer .flex-end{
+    align-items: flex-start;
+    height: 20px;
+  }
+  .logos-footer img{
+    width: 150px;
+    margin-top: 30px;
+  }
+  #tarifas{
+    padding: 100px 0;
+  }
+  .navbar{
+    padding: 15px 0 ;
+  }
+  #footer ul{
+    display: inline;
+    position: relative;
+    top: -30px;
+  }
+}
