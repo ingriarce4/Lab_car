@@ -116,8 +116,48 @@
   border: 0;
 }
 #conductor p,
+
+/* Tarifas*/
 #tarifas,
 .box-conductor button,
 .box-conductor p{
   font-family: 'Open Sans', sans-serif;
+}
+#tarifas{
+  padding: 50px 0;
+  background-color: #f7b617;
+  color: #ffffff;
+}
+#conductor h2,
+#tarifas h2,
+#tarifas button,
+.inf-title{
+  font-family: 'Raleway', sans-serif;
+}
+.input-box{
+  margin: 25px 0;
+}
+.input-box img{
+  width: 18px;
+}
+.input-box input{
+  background: none;
+  border: 0;
+  border: 1px solid #ffffff;
+  border-radius: 7px;
+  width: 290px;
+  padding: 5px 8px;
+  margin-left: 5px;
+  outline: none;
+}
+.input-box input::placeholder{
+  color: #ffffff;
+}
+#mapa{
+  height: 350px;
+  z-index: 10;
+}
+.border-mapa{
+  padding: 10px;
+  border: 1px solid #ffffff;
 }
